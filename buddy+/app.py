@@ -9,7 +9,8 @@ app.database = "sample.db"
 #@app.route('/signup', methods=['GET','POST'])
 #def signup():
 
-#checks if the user is logged in or not, redirects accordingly
+
+# checks if the user is logged in or not, redirects accordingly
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -20,9 +21,10 @@ def login_required(f):
             return redirect(url_for('login'))
     return wrap
 
-#logs user in
-#redirect to home page if status is logged in
-@app.route('/login', methods=['GET','POST'])
+
+# logs user in
+# redirect to home page if status is logged in
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':
@@ -33,15 +35,17 @@ def login():
             return redirect(url_for('homepage'))
     return render_template('login.html', error=error)
 
-#function for logging out the user
+
+# function for logging out the user
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
     flash("You were just logged out")
     return redirect(url_for('login'))
 
-#redirect here if user tries to go to '/'
-#require status to be logged in
+
+# redirect here if user tries to go to '/'
+# require status to be logged in
 @app.route('/homepage')
 @login_required
 def homepage():
@@ -51,8 +55,10 @@ def homepage():
     g.db.close()
     return render_template("landingpage.html", posts=posts)
 
+
 def connect_db():
     return sqlite3.connect(app.database)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
