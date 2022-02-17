@@ -29,17 +29,24 @@ def add_interests(user, interest_list):
 def update_user_info(form):
     from models import User
     user = User.query.filter_by(username=track_current_user('curr')).first()
-    if form.chosen_interests.data != None:
-        add_interests(user, form.chosen_interests.data)
-    if form.is_buddy.data != user.is_buddy:
-        user.is_buddy = form.is_buddy.data
-    if form.is_student.data != form.is_student.data:
-        user.is_student = form.is_student.data
-    if form.current_uni.data != None:
-        user.current_uni = form.current_uni.data
-    if form.email.data != None:
-        user.email = form.email.data
+    #user_id = user.user_id
+    #if form.chosen_interests.data != None:
+        #remove_interest(user_id)
+        #add_interests(user, form.chosen_interests.data)
+    user.is_buddy = form.is_buddy.data
+    user.is_student = form.is_student.data
+    user.current_uni = form.current_uni.data
     return user
+"""
+def remove_interest(user):
+    conn = None
+    try:
+        conn = sqlite3.connect('app.db')
+    except:
+        error=error
+    cur = conn.cursor()
+    cur.execute("DELETE FROM interest_table WHERE user_id =:user", {"user": str(user)})
+    return"""
     
 def read_new_user_info(reg_form):
     from models import User
@@ -95,7 +102,6 @@ def database_control(inter_id):
         conn = sqlite3.connect('app.db')
     except:
         error=error
-        print(error)
     cur = conn.cursor()
     cur.execute("SELECT user_id, interest_id FROM interest_table WHERE interest_id =:intr_id ", {"intr_id": str(inter_id)})
     return cur.fetchall()
@@ -109,7 +115,7 @@ def process_search(form):
     buddy_list = []
     for x in final_users:
         user = User.query.filter_by(user_id=x[0]).first()
-        if user.current_location == city:
+        if user.current_location == city and user.is_buddy == True:
             if track_current_user('curr') == (user.username):
                 pass
             else:
