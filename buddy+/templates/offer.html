@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find a home!</title>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+	<div class="top">
+			<div class="row">
+				<div class="col-md-5">			
+					<ul class="follow">
+						<li>Follow Us</li>
+						<li><a href=""><img src="images/facebook.png" alt="" /></a></li>
+						<li class="left"><a href=""><img src="images/twitter.png" alt="" /></a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-2 logo">
+					<a href="index.html"><img src="images/logo.jpg" alt="" /></a>
+				</div>
+				<div class="col-md-5">
+					<ul class="menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="browse.html">Browse</a></li>
+						<li><a href="offer.html">Sign Up</a></li>
+						<li><a href="login2.html">Login2</a></li>
+						<li><a href="#" onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+					</ul>
+				</div>
+			</div>
+	</div>
+	
+	
+	<div id="id01" class="modal"><div class="container login1">
+  
+	  <form class="modal-content animate form1" action="/action_page.php" method="post">
+		<div class="imgcontainer">
+		  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		  <img src="images/admin.png" alt="Avatar" class="avatar">
+		</div>
+
+		<div class="container">
+		  <label for="uname"><b>Username/Email</b></label>
+		  <input type="text" placeholder="Enter your username or email" name="uname" required>
+
+		  <label for="psw"><b>Password</b></label>
+		  <input type="password" placeholder="Enter password" name="psw" required>
+			
+		  <button type="submit">Login</button>
+		  <label>
+			<input type="checkbox" checked="checked" name="remember"> Remember me
+		  </label>
+		</div>
+
+		<div class="container" style="background-color:#f1f1f1">
+		  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		  <span class="psw">Forgot <a href="#">password?</a></span>
+		  <span class="psw mr-3"><a href="#">New account</a></span>
+		</div>
+	</form>
+	</div>
+	</div>
+	
+	
+	<div class="house">
+		<div class="container">
+			<div class="row">
+				<form>
+					<div class="ty">
+					<h2 class="mb-5">Thank you for choosing our services!<br /> For a better experience, we reccomend
+					you to <a href="#" onclick="document.getElementById('id01').style.display='block'">log in</a> or create a new account! If not, you can continue without logging in.<br/>
+					</h2>
+					</div>
+					<div class="form-row">
+						<div class="col-md-4 mb-3">
+						  <label for="validationServer01">First Name</label>
+						  <input type="text" class="form-control" id="validationServer01" placeholder="First Name" required>
+						  <div class="valid-feedback">
+							
+						  </div>
+						</div>
+						<div class="col-md-4 mb-3">
+						  <label for="validationServer02">Name</label>
+						  <input type="text" class="form-control" id="validationServer02" placeholder="Name" required>
+						  <div class="valid-feedback">
+							
+						  </div>
+						</div>
+						
+						<div class="col-md-4 mb-3">
+						  <label for="validationServer02">Email</label>
+						  <input type="email" class="form-control" id="validationServer02" placeholder="Email" required>
+						  <div class="valid-feedback">
+							
+						  </div>
+						</div>
+						
+					  </div>
+					  <div class="form-row">
+						<div class="col-md-6 mb-3">
+						  
+							<input type="checkbox" id="interest1" name="interest1" value="Nature">
+							<label for="interest1"> Nature</label><br>
+							<input type="checkbox" id="interest2" name="interest2" value="Sports">
+							<label for="interest2"> Sports</label><br>
+							<input type="checkbox" id="interest3" name="interest3" value="Culture">
+							<label for="interest3"> Culture</label><br>
+							<input type="checkbox" id="interest4" name="interest4" value="Art">
+							<label for="interest4"> Art</label><br>
+							<input type="checkbox" id="interest5" name="interest5" value="Cooking">
+							<label for="interest5"> Cooking</label><br><br>
+						  
+						  <!--<input type="text" class="form-control" id="validationServer03" placeholder="English, French etc." required> -->
+						  <div class="invalid-feedback">
+							
+						  </div>
+						</div>
+						<div class="col-md-3 mb-3">
+						  <label for="validationServer04">Country</label>
+						  <input type="text" class="form-control" id="validationServer04" placeholder="Country" required>
+						  <div class="invalid-feedback">
+							
+						  </div>
+						</div>
+						<div class="col-md-3 mb-3">
+						  <label for="validationServer05">Phone number</label>
+						  <input type="text" class="form-control" id="validationServer05" placeholder="+XXXXXXXXX" required>
+						  <div class="invalid-feedback">
+							
+						  </div>
+						</div>
+					  </div>
+					  <div class="form-group">
+						<div class="form-check">
+						  <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+						  <label class="form-check-label" for="invalidCheck3">
+							I want to be a Buddy!
+						  </label>
+						  <div class="invalid-feedback">
+							
+						  </div>
+						</div>
+					  </div>
+					  
+					
+				     <div class="form-group">
+						<select class="custom-select" required>
+						  <option value="">I speak...</option>
+						  <option value="1">English</option>
+						  <option value="2">French</option>
+						  <option value="3">Spanish</option>
+						  <option value="3">Italian</option>
+						  <option value="3">Other</option>
+						</select>
+						
+				    </div>
+			
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" id="validatedCustomFile" required>
+						<label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+						
+					</div>
+					
+					<button class="btn btn-primary mt-4" type="submit">Submit form</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottomTop mt-4"></div>
+
+
+	<div class="tail">
+		<div class="text1">
+			<div class="row">
+				<div class="col-md-9">
+					<ul class="navigation strong">
+						<li><a href="">Support</a></li>
+						<li><a href="">Guide</a></li>
+						<li><a href="">Terms of Service</a></li>
+						<li><a href="">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 download">
+					<p><a href=""><img src="images/download.png" alt="" /></a></p>
+				</div>
+			</div>
+			<hr>
+			
+			<div class="row">
+				<div class="col-md-9">
+					<ul class="navigation supercell">
+						<li><a href="">More information</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 contact">
+					<ul class="navigation">
+						<li><a href=""><img src="images/facebook.png" alt="" /></a></li>
+						<li class="left"><a href=""><img src="images/twitter.png" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script>
+		var modal = document.getElementById('id01');
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>This is the search page.</h1>
+<h3>Make a search to find a buddy with similar interests!</h3>
+
+<p>Click <a href="/homepage">here</a> to go back to the homepage.</p>
+
+<br>
+
+<form method="post" action="/search_view">
+
+    {{ form.csrf_token() }}
+
+    {% for field in form if field.name != "csrf_token" %}
+
+    <p>{{ field.label() }}</p>
+    <p>{{ field }} </p>
+    
+    {% endfor %}
+    
+    
+    <br>
+    <input type="submit" value="Submit">
+    {% for field, errors in form.errors.items() %}
+    <div>
+        <p>{{ form[field].label }}: {{ ', '.join(errors) }}</p>
+    </div>
+    {% endfor %}
+
+</form>
+{% endblock %}

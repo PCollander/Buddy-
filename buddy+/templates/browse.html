@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find a home!</title>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+	<div class="top">
+			<div class="row">
+				<div class="col-md-5">			
+					<ul class="follow">
+						<li>Follow Us</li>
+						<li><a href=""><img src="images/facebook.png" alt="" /></a></li>
+						<li class="left"><a href=""><img src="images/twitter.png" alt="" /></a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-2 logo">
+					<a href="index.html"><img src="images/logo.jpg" alt="" /></a>
+				</div>
+				<div class="col-md-5">
+					<ul class="menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="browse.html">Browse</a></li>
+						<li><a href="offer.html">Sign Up</a></li>
+						<li><a href="login2.html">Login2</a></li>
+						<li><a href="#" onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+					</ul>
+				</div>
+			</div>
+	</div>
+	
+	
+	<div id="id01" class="modal"><div class="container login1">
+  
+	  <form class="modal-content animate form1" action="/action_page.php" method="post">
+		<div class="imgcontainer">
+		  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		  <img src="images/admin.png" alt="Avatar" class="avatar">
+		</div>
+
+		<div class="container">
+		  <label for="uname"><b>Username/Email</b></label>
+		  <input type="text" placeholder="Enter your username or email" name="uname" required>
+
+		  <label for="psw"><b>Password</b></label>
+		  <input type="password" placeholder="Enter password" name="psw" required>
+			
+		  <button type="submit">Login</button>
+		  <label>
+			<input type="checkbox" checked="checked" name="remember"> Remember me
+		  </label>
+		</div>
+
+		<div class="container" style="background-color:#f1f1f1">
+		  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		  <span class="psw">Forgot <a href="#">password?</a></span>
+		  <span class="psw mr-3"><a href="#">New account</a></span>
+		</div>
+	</form>
+	</div>
+	</div>
+	
+	
+	<div class="container searchBuddy" id="cards">
+		<h1>Search for a Buddy!</h1>
+		   <div class="container">
+		  <div class="row searchFilter" >
+			 <div class="col-sm-12" >
+			  <div class="input-group" >
+			   <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="Country" >
+			   
+
+			   <div class="input-group-btn" >
+				<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="label-icon" >Interests</span> <span class="caret" >&nbsp;</span></button>
+				<div class="dropdown-menu dropdown-menu-right" >
+				   <ul class="interests_filters" >
+					<li >
+					 <input type="checkbox" name="interests" id="nature" value="nature" ><label class="interests-label" for="nature" > nature</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="interests" id="sport" value="sport" ><label class="interests-label" for="sport" > sport</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="interests" id="culture" value="culture" ><label class="interests-label" for="culture" > culture</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="interests" id="art" value="art" ><label class="interests-label" for="art" > art</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="interests" id="cooking" value="cooking" ><label class="interests-label" for="cooking" > cooking</label>
+					</li>
+				   </ul>
+				</div>
+				 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="label-icon" >Languages</span> <span class="caret" >&nbsp;</span></button>
+				<div class="dropdown-menu dropdown-menu-right" >
+				   <ul class="lang_filters" >
+					<li >
+					 <input type="checkbox" name="lang" id="English" value="English" ><label class="lang-label" for="english" > English</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="lang" id="Italian" value="Italian" ><label class="lang-label" for="italian" > Italian</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="lang" id="Spanish" value="Spanish" ><label class="lang-label" for="spanish" > Spanish</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="lang" id="German" value="German" ><label class="lang-label" for="german" > German</label>
+					</li>
+					<li >
+					 <input type="checkbox" name="lang" id="French" value="French" ><label class="lang-label" for="French" > French</label>
+					</li>
+				   </ul>
+				</div>
+				<button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" >Search</span></button>
+			   </div>
+			  </div>
+			 </div>
+		  </div>
+		</div>
+	
+	
+	
+	</div>
+	
+	<div class="container cards" id="cards">
+		<div class="card-deck">
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+			<img src="images/casa1.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Andrew - Edinburgh</p>
+			</div>
+		  </div>
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+			<img src="images/casa2.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Anda - Bucharest</p>
+			</div>
+		  </div>
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+			<img src="images/casa3.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Jacopo - Turin</p>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
+	
+	<div class="container cards mt-5">
+		<div class="card-deck">
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+			
+			<img src="images/casa4.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Diana - Athens</p>
+			</div>
+		  </div>
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+				<img src="images/teren1.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Lorenzo - Turin</p>
+			</div>
+		  </div>
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+				<img src="images/magazin1.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Violetta - Madrid</p>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
+	<div class="container cards mt-5">
+		<div class="card-deck">
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+			<img src="images/casa5.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Rares - Bucharest</p>
+			</div>
+		  </div>
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+				<img src="images/teren2.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Katryn - Berlin</p>
+			</div>
+		  </div>
+		  <div class="card bg-success">
+			<div class="card-body text-center">
+				<img src="images/casa6.jpg" alt="" class="img img-fluid"/>
+			  <p class="card-text">Nikolai - Sofia</p>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="bottomTop mt-4"></div>
+
+
+	<div class="tail">
+		<div class="text1">
+			<div class="row">
+				<div class="col-md-9">
+					<ul class="navigation strong">
+						<li><a href="">Support</a></li>
+						<li><a href="">Guide</a></li>
+						<li><a href="">Terms of Service</a></li>
+						<li><a href="">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 download">
+					<p><a href=""><img src="images/download.png" alt="" /></a></p>
+				</div>
+			</div>
+			<hr>
+			
+			<div class="row">
+				<div class="col-md-9">
+					<ul class="navigation supercell">
+						<li><a href="">More information</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 contact">
+					<ul class="navigation">
+						<li><a href=""><img src="images/facebook.png" alt="" /></a></li>
+						<li class="left"><a href=""><img src="images/twitter.png" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script>
+		var modal = document.getElementById('id01');
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <p> Username: {{ user_info.username }} </p>
+    <p> Mother tongue: {{ user_info.mother_tongue }} </p>
+    <p> Nationality: {{ user_info.nationality }} </p>
+    {% if user_info.is_student == True %}
+        This buddy is a student in {{ user_info.current_uni}}
+    {% else %}
+        This buddy is not a student
+    {% endif %}
+    
+{% endblock %}

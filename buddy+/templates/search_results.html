@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% for user in users %}
+    <form method="get" action="/show_user">
+    <p> Username: {{ user.username }} </p>
+    <p> Mother tongue: {{ user.mother_tongue }} </p>
+    <p> Nationality: {{ user.nationality }} </p>
+    <input method="get" type="hidden" name="username" value="{{ user.username }}" />
+    <input type="submit" value="View more details">
+    <br> 
+    <br> 
+    <br> 
+    </form>
+    {% endfor %}
+    
+{% endblock %}
