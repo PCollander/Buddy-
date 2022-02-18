@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="register-style row">Welcome to register to our service!</h1>
-<h3 class="register-style row">Iz many good service! Now, give us your data!</h3>
+<h1 class="row">Welcome to register to our service!</h1>
+<h3 class="row">Iz many good service! Now, give us your data!</h3>
 
-<p class="register-style row">Click <a href="/login">here</a> to login.</p>
+<p class="row">Click <a href="/login"> here </a> to login.</p>
 
 <br>
 
-<div class="register-style row">
+<div class="row">
     <form method="post" action="{{ url_for('register') }}">
 
         {{ form.csrf_token() }}
