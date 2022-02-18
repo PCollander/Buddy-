@@ -1,5 +1,15 @@
 {% extends "base.html" %}
+{% include "nav2.html" %}
+
+
 {% block content %}
+
+<br>
+
+<h2>Choose your buddy!</h2>
+<h5>After you make your choice, you will be able to chat with them!</h5>
+
+<br>
 
     {% for user in users %}
     <form method="get" action="/show_user">
@@ -7,11 +17,16 @@
     <p> Mother tongue: {{ user.mother_tongue }} </p>
     <p> Nationality: {{ user.nationality }} </p>
     <input method="get" type="hidden" name="username" value="{{ user.username }}" />
-    <input type="submit" value="View more details">
+    <input class="btn btn-outline-secondary" type="submit" value="View more details">
     <br> 
     <br> 
     <br> 
     </form>
     {% endfor %}
-    
+
+<br>
+<br>
+<h6>Do you want to change your preferences and search again?</h6>
+<a href="/search_view" class="btn btn-outline-secondary" role="button" aria-pressed="true">Search again</a>
+
 {% endblock %}

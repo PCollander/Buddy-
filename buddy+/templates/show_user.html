@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% include "nav2.html" %}
 {% block content %}
+
+<br>
+
 
     <p> Username: {{ user_info.username }} </p>
     <p> Mother tongue: {{ user_info.mother_tongue }} </p>
@@ -7,7 +11,12 @@
     {% if user_info.is_student == True %}
         This buddy is a student in {{ user_info.current_uni}}
     {% else %}
-        This buddy is not a student
+        This buddy is not a student.
     {% endif %}
-    
+<br>
+<br>
+<h5>Do you want to choose this buddy?</h5>
+<a href="" class="btn btn-outline-secondary" role="button" aria-pressed="true">Yes!</a>
+<input class="btn btn-outline-secondary" type="button" value="No, keep looking." onclick="history.back()">
+
 {% endblock %}

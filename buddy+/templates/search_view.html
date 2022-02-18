@@ -1,55 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-
-<title>{%  block title %}{% endblock %}</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/styles.css">
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-}
-</style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-        <a class= "nav-link" href="/homepage">Home</a>
-      </li>
-        <li class="nav-item">
-        <a class= "nav-link" href="/modify_information">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class= "nav-link" href="/logout">Log Out</a>
-      </li>
-      <li class="nav-item">
-        <a class= "nav-link" href="/register"> Help Center </a>
-      </li>
-      <li class="nav-item">
-
-      </li>
-    </ul>
-  </div>
-</nav>
-    </head>
-<body>
+{% extends "base.html" %}
+{% include "nav2.html" %}
 {% block content %}
+<br>
 
-<h1>This is the search page.</h1>
-<h3>Make a search to find a buddy with similar interests!</h3>
+<h2>Search for a Buddy!</h2>
+<h5>Select your preferences and find a buddy with similar interests!</h5>
 
 
 <br>
@@ -75,6 +30,30 @@
     {% endfor %}
 
 </form>
+<br>
+
+<div class="row">
+  <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+    <img
+      src="https://cdn.pixabay.com/photo/2017/08/02/11/26/art-2571027_960_720.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+
+    <img
+      src="https://cdn.pixabay.com/photo/2014/07/31/22/50/photographer-407068_960_720.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <img
+      src="https://cdn.pixabay.com/photo/2020/06/29/19/26/piano-5353974_960_720.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+    />
+
+
+  </div>
+</div>
 {% endblock %}
-</body>
-</html>
