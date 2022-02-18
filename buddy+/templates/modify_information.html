@@ -9,13 +9,14 @@
 <br>
 <br>
 
-<form method="post" action="/modify_information">
+<div class="row">
+    <form method="post" action="/modify_information">
 
     {{ mod_info.csrf_token() }}
 
     {% for field in mod_info if field.name != "csrf_token" %}
 
-    <p>{{ field.label() }}</p>
+     <p class="lead">{{ field.label() }}</p>
     <p>{{ field }} </p>
     
     {% endfor %}
@@ -30,4 +31,6 @@
     {% endfor %}
 
 </form>
+</div>
+
 {% endblock %}
