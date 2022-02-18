@@ -1,0 +1,28 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+
+.fig 
+{
+	padding: 10px;
+	/*background-color: #d9c1d6;*/
+	border-radius: 0px 0px 0px 0px;
+	color: #393939;
+}
+
+.parCol
+{
+	width: 360px;
+	border-radius: 0 0 8px 8px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: left;
+	box-shadow: 0px 3px 0px grey;
+	font-size: medium
+}
+
+.read {
+	color: #5f635e;
+}
