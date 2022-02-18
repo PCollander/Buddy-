@@ -39,11 +39,9 @@ class SearchForm(FlaskForm):
         [validators.InputRequired()], choices=get_cities)
 
 class ModifyInfo(FlaskForm):
-    chosen_interests = SelectMultipleField('Choose your interests',
-        choices=get_interests)
+    #chosen_interests = SelectMultipleField('Choose your interests',
+    #    choices=get_interests)
     is_buddy = BooleanField('Do you want to be a buddy?')
     is_student = BooleanField('Are you a student?')
-    current_uni = StringField('Enter your current University/Facility', 
-        [validators.Length(min=4, max=35)])
-    email = StringField('Email Address', [validators.Length(min=6, max=35), 
-        validators.Email()])
+    current_uni = StringField('Enter your current University/Facility')
+    

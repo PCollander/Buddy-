@@ -86,15 +86,14 @@ def modify_information():
     from forms import ModifyInfo
     mod_info = ModifyInfo()
     if request.method == 'POST' and mod_info.validate():
-        user = update_user_info()
+        user = update_user_info(mod_info)
         current_db_sessions = db.session.object_session(user)
         current_db_sessions.commit()
         flash('Your information was updated succesfully!')
-        render_template('modify_information.html')
+        return redirect(url_for('homepage'))
     error=mod_info.errors.items()
-    render_template('modify_information.html', error=error)
-
-
+    return render_template('modify_information.html', mod_info=mod_info,\
+         error=error)
 
 # logs user in
 # redirect to home page if status is logged in
@@ -126,6 +125,10 @@ def logout():
 @login_required
 def homepage():
     return render_template("landingpage.html")
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 if __name__ == '__main__':

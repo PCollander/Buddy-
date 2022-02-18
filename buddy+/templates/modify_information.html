@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="utf-8">
-
-<title>{%  block title %}{% endblock %}</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="css/bootstrap.css">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-        <a class= "nav-link" href="/homepage">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class= "nav-link" href="/modify_information">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class= "nav-link" href="/logout">Log Out</a>
-      </li>
-      <li class="nav-item">
-        <a class= "nav-link" href="/register"> Help Center </a>
-      </li>
-      <li class="nav-item">
-
-      </li>
-    </ul>
-  </div>
-</nav>
-</head>
-<body>
+{% extends "base.html" %}
 {% block content %}
 
 <h1>Modify your information if necessary.</h1>
@@ -42,7 +7,7 @@
 <br>
 <h3>Submit when you are done.</h3>
 
-
+<p>Click <a href="/homepage">here</a> to go back to the homepage.</p>
 
 <br>
 
@@ -68,5 +33,3 @@
 
 </form>
 {% endblock %}
-</body>
-</html>
