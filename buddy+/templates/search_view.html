@@ -8,15 +8,16 @@
 
 
 <br>
-
-<form method="post" action="/search_view">
+<div class="row">
+    <form method="post" action="/search_view">
 
     {{ form.csrf_token() }}
 
     {% for field in form if field.name != "csrf_token" %}
 
-    <p>{{ field.label() }}</p>
+     <p class="lead">{{ field.label() }}</p>
     <p>{{ field }} </p>
+
     
     {% endfor %}
     
@@ -30,26 +31,24 @@
     {% endfor %}
 
 </form>
+    </div>
 <br>
 
 <div class="row">
   <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-    <img
-      src="https://cdn.pixabay.com/photo/2017/08/02/11/26/art-2571027_960_720.jpg"
+    <img src="../static/images/museum.jpg" alt=""
       class="w-100 shadow-1-strong rounded mb-4"
     />
   </div>
   <div class="col-lg-4 mb-4 mb-lg-0">
 
-    <img
-      src="https://cdn.pixabay.com/photo/2014/07/31/22/50/photographer-407068_960_720.jpg"
+    <img src="../static/images/photography.jpg" alt=""
       class="w-100 shadow-1-strong rounded mb-4"
     />
   </div>
 
   <div class="col-lg-4 mb-4 mb-lg-0">
-    <img
-      src="https://cdn.pixabay.com/photo/2020/06/29/19/26/piano-5353974_960_720.jpg"
+   <img src="../static/images/music.jpg" alt=""
       class="w-100 shadow-1-strong rounded mb-4"
     />
 
