@@ -32,7 +32,7 @@ class User(db.Model):
     surname = db.Column(db.String(35), nullable=False)
     current_location = db.Column(db.String(35), nullable=False)
     nationality = db.Column(db.String(25), nullable=False)
-    date_of_birth = db.Column(db.Date, nullable=False)  # the class diagram needs changing
+    date_of_birth = db.Column(db.Date, nullable=False)
     is_buddy = db.Column(db.Boolean, nullable=False)
     is_student = db.Column(db.Boolean, nullable=False)
     current_uni = db.Column(db.String(35), nullable=False)
@@ -55,6 +55,9 @@ class Review(db.Model):
     # reviewee_id = db.Column(db.Integer, nullable=False)
     rewiever_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     reviewer = db.relationship('User')
+    
+    def __repr__(self):
+        return self
 
 review_table = db.Table(
     'review_table',
@@ -78,7 +81,10 @@ class Event(db.Model):
     event_buddy_id = db.Column(db.String(50), db.ForeignKey('user.id'))
     event_buddy = db.relationship("User", backref=backref("request", uselist=False))
     event_participant = db.Column(db.String(50), nullable=True)
-
+    
+    
+    def __repr__(self):
+        return self
 """
 # one to many and one to one respectively
 # https://stackoverflow.com/questions/25375179/one-to-many-flask-sqlalchemy
