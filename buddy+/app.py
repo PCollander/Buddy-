@@ -49,7 +49,7 @@ def register():
     reg_form = RegisterForm()
     # Specific checking if the user is logged in or not. Redirects if is logged
     # in
-    if 'logged_in' in session.values():
+    if 'logged_in' in session.keys():
         if session['logged_in'] == True:
             return redirect(url_for('homepage'))
         else:
@@ -92,7 +92,7 @@ def search_view():
 def show_user():
     # Passes the username of the chosen user to a function that fetches the 
     # users information
-    user_info = get_user_info(request.form.get('username'))
+    user_info = get_user_info(request.args.get('username'))
     return render_template('show_user.html', user_info=user_info)
 
 
@@ -122,9 +122,9 @@ def login():
     error = None
     # Specific checking if the user is logged in or not. Redirects if is logged
     # in
-    if 'logged_in' in session.values():
-        if session['logged_in'] == True:
-            return redirect(url_for('homepage'))
+    print(session.keys())
+    if 'logged_in' in session.keys():
+        return redirect(url_for('homepage'))
     if request.method == 'POST':
         # Passes the form inputs to a function that checks the credencial 
         # validity. Redirects accordingly or informs of an error
@@ -156,9 +156,9 @@ def homepage():
 # in
 @app.route('/')
 def index():
-    if 'logged_in' in session.values():
-        if session['logged_in'] == True:
-            return redirect(url_for('homepage'))
+    print(session.values())
+    if 'logged_in' in session.keys():
+        return redirect(url_for('homepage'))
     return render_template('index.html')
 
 
