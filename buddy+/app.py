@@ -156,7 +156,6 @@ def homepage():
 # in
 @app.route('/')
 def index():
-    print(session['logged_in'])
     if 'logged_in' in session.values():
         if session['logged_in'] == True:
             return redirect(url_for('homepage'))
