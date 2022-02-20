@@ -1,3 +1,11 @@
+"""
+Politecnico di Torino, Information Systems, Semester of 2021-2022
+Group 14, Buddy+
+
+"""
+
+# List of languages, used to populate registration forms drop down selection
+# to make the code more tidy
 languages = [
     'Albanian',
     'Armenian',

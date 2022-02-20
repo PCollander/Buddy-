@@ -1,13 +1,7 @@
+"""
+Politecnico di Torino, Information Systems, Semester of 2021-2022
+Group 14, Buddy+
+"""
+
+# Secret key used for e.g. hashing
 secret_key = "ThisIsTHeKeyThatIsExtremelySafeAndUnBreakableToAllLivingAndMachine"
-
-"""import os
-
-class BaseConfig(object):
-    DEBUG = False
-    SQLAlchemy_DATABASE_URI = os.environ['DATABASE_URL']
-
-class DevelopmentConfig(BaseConfig):
-    DEBUG = True
-
-class ProductionConfig(BaseConfig):
-    DEBUG = False"""

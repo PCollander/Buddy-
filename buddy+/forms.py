@@ -1,3 +1,11 @@
+"""
+Politecnico di Torino, Information Systems, Semester of 2021-2022
+Group 14, Buddy+
+
+The forms used in the service.
+
+"""
+
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, validators, PasswordField, \
     SelectField, DateField, SelectMultipleField
@@ -5,6 +13,7 @@ from choice_options import languages
 from controls import get_interests, get_cities
 
 
+# Class of register form for registering a new user
 class RegisterForm(FlaskForm):
     username = StringField('Username', [validators.Length(min=4, max=12), 
         validators.InputRequired()])
@@ -32,16 +41,24 @@ class RegisterForm(FlaskForm):
     chosen_interests = SelectMultipleField('Choose your interests', 
         [validators.InputRequired()], choices=get_interests)
 
+
+# Class of search form for looking for buddies
 class SearchForm(FlaskForm):
-    chosen_interest = SelectField('Choose an interest', [validators.InputRequired()], 
-        choices=get_interests)
+    chosen_interest = SelectField('Choose an interest', 
+        [validators.InputRequired()], choices=get_interests)
     chosen_city = SelectField('Choose a city to look buddies from', 
         [validators.InputRequired()], choices=get_cities)
 
+
+# Class of information modification form to modify a single users information
 class ModifyInfo(FlaskForm):
-    #chosen_interests = SelectMultipleField('Choose your interests',
-    #    choices=get_interests)
+    """
+    Under construction for further implementations:
+    Choose new interests for a user
+    
+    chosen_interests = SelectMultipleField('Choose your interests',
+        choices=get_interests)
+    """
     is_buddy = BooleanField('Do you want to be a buddy?')
     is_student = BooleanField('Are you a student?')
     current_uni = StringField('Enter your current University/Facility')
-    

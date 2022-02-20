@@ -10,8 +10,10 @@
 <h5>After you make your choice, you will be able to chat with them!</h5>
 
 <br>
-
-    {% for user in users %}
+    {% if users|length == 0 %}
+    <p> We found no users that match your query!</p>
+    {% else %}
+    {% for user in users %} 
     <form method="get" action="/show_user">
     <p> Username: {{ user.username }} </p>
     <p> Mother tongue: {{ user.mother_tongue }} </p>
@@ -23,6 +25,7 @@
     <br> 
     </form>
     {% endfor %}
+    {% endif %}
 
 <br>
 <br>
