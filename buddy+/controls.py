@@ -6,6 +6,7 @@ The controls file of the service.
 """
 
 
+from tabnanny import check
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 
@@ -85,18 +86,22 @@ def remove_interest(user):
 # the freshly created User object
 def read_new_user_info(reg_form):
     from models import User
-    user = User(username=reg_form.username.data, 
-            password=generate_password_hash(reg_form.password.data, method='sha256'),
-            email=reg_form.email.data, name=reg_form.name.data, 
-            surname=reg_form.surname.data, 
-            current_location=reg_form.current_location.data,
-            nationality=reg_form.nationality.data, 
-            date_of_birth=reg_form.date_of_birth.data,
-            is_buddy=reg_form.is_buddy.data, 
-            is_student=reg_form.is_student.data, 
-            current_uni=reg_form.current_uni.data, 
-            mother_tongue=reg_form.mother_tongue.data)
-    return user
+    if get_user_info(reg_form.username.data) == None and \
+        check_email(reg_form.email.data):
+        user = User(username=reg_form.username.data, 
+                password=generate_password_hash(reg_form.password.data, method='sha256'),
+                email=reg_form.email.data, name=reg_form.name.data, 
+                surname=reg_form.surname.data, 
+                current_location=reg_form.current_location.data,
+                nationality=reg_form.nationality.data, 
+                date_of_birth=reg_form.date_of_birth.data,
+                is_buddy=reg_form.is_buddy.data, 
+                is_student=reg_form.is_student.data, 
+                current_uni=reg_form.current_uni.data, 
+                mother_tongue=reg_form.mother_tongue.data)
+        return user
+    else:
+        return None
 
 
 # Returns all the interests from the database as a list object
@@ -113,7 +118,17 @@ def get_interests():
 def get_user_info(usrnm):
     from models import User
     user = User.query.filter_by(username=usrnm).first()
-    return user    
+    return user
+
+# Returns 'True' if email in question is not used yet, 'False' if it is used
+def check_email(e_mail):
+    from models import User
+    return_value = True
+    if User.query.filter_by(email=e_mail).first() == None:
+        return_value = True
+    else:
+        return_value = False
+    return return_value
 
 
 # Receives the username & password upon loggin in. Returns True if they check 

@@ -58,14 +58,18 @@ def register():
         if request.method == 'POST' and reg_form.validate():
             # Passes form information to handler function. Returns User-object
             user = read_new_user_info(reg_form)
-            # Reads and adds the chosen interests to the User
-            interest_list = reg_form.chosen_interests.data
-            add_interests(user, interest_list)
-            # Save data to database and allow user to login after sign up
-            current_db_sessions = db.session.object_session(user)
-            current_db_sessions.add(user)
-            current_db_sessions.commit()
-            return render_template('login2.html')
+            if user != None:
+                # Reads and adds the chosen interests to the User
+                interest_list = reg_form.chosen_interests.data
+                add_interests(user, interest_list)
+                # Save data to database and allow user to login after sign up
+                current_db_sessions = db.session.object_session(user)
+                current_db_sessions.add(user)
+                current_db_sessions.commit()
+                return render_template('login2.html')
+            else:
+                error = ("Username or email is already in use!")
+                return render_template('registration.html', error=error, form=reg_form)
         error=reg_form.errors.items()
         return render_template('registration.html', error=error, form=reg_form)
 
@@ -122,7 +126,6 @@ def login():
     error = None
     # Specific checking if the user is logged in or not. Redirects if is logged
     # in
-    print(session.keys())
     if 'logged_in' in session.keys():
         return redirect(url_for('homepage'))
     if request.method == 'POST':
@@ -156,7 +159,6 @@ def homepage():
 # in
 @app.route('/')
 def index():
-    print(session.values())
     if 'logged_in' in session.keys():
         return redirect(url_for('homepage'))
     return render_template('index.html')
